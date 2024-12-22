@@ -8,7 +8,10 @@ const software=req.headers['user-agent']||'Unknown';
 const response={
     ipAddress:ipAddress,
     language:language.split(',')[0],
-}
+    software:software.split('(')[1]?.split(')')[0]||'Uknown'
+};
+res.json(response)
 }
 
-)
+);
+module.exports=router;
