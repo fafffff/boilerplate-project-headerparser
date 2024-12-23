@@ -1,4 +1,4 @@
-const { response } = require("express")
+
 
 document.getElementById('fetch-btn').addEventListener('click',()=>{
     fetch('/Header').then(response=>
@@ -9,10 +9,13 @@ document.getElementById('fetch-btn').addEventListener('click',()=>{
    }   )
    .then(
     data=>{
-        const output=`Ip Address:${data.ipAddress} 
-        Language:${data.language}
-        Software:${data.software}`;
-        document.getElementById('output').textContent=output;
+        const output=`
+       <ul>
+                        <li><strong>IP Address:</strong> ${data.ipAddress}</li>
+                        <li><strong>Language:</strong> ${data.language}</li>
+                        <li><strong>Software:</strong> ${data.software}</li>
+                    </ul>`
+        document.getElementById('output').innerHTML=output;
 
     }
    )

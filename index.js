@@ -4,6 +4,7 @@ const mongoose=require("mongoose");
 const cors=require("cors");
 const path=require("path");
 const app=express();
+app.use(cors());
 const headerRouter=require('./router/headerRouter');
 
 mongoose.connect(process.env.MONGO_URI).then(()=>console.log("Connected to Mongo DB"))
